@@ -64,8 +64,8 @@ var setupDVD = () => {
     var xCoordinate = Math.floor( Math.random() * (canvas.width-rectWidth) );
     var yCoordinate = Math.floor( Math.random() * (canvas.height-rectHeight) );
     
-    var xVel = 1;
-    var yVel = 1;
+    var xVel = Math.random() * 10 - 5 ;
+    var yVel = Math.random()* 10 - 5 ;
 
     var logo = new Image();
     logo.src = "logo_dvd.jpg";
@@ -126,14 +126,8 @@ stopButton.addEventListener( "click", function(e) {
 });
 
 dvdButton.addEventListener( "click", function(e) {
-    if (machine === "dvd") {
-        e.preventDefault() // do not register click if already running
-        console.log( "--> MACHINE ALREADY ON!" );
-    }
-    
-    else { // start if machine off
-        if(machine === "circle") window.cancelAnimationFrame(requestID);
+    if (machine === "cirlce") {
         machine = "dvd";
-        setupDVD();
     }
+    setupDVD();
 });

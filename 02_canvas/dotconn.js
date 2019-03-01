@@ -25,7 +25,7 @@ c.addEventListener('click', function(e) {
   // prevent the default action of clicking on canvas
   e.preventDefault();
   console.log("Ellipse");
-  ctx.fillStyle = '#00FF00'; // green
+  ctx.fillStyle = "white"
   // starts the path of the ellipse all over again every time it is clicked
   ctx.beginPath();
     // get coordinates relative to element
