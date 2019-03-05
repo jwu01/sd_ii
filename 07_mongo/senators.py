@@ -22,7 +22,7 @@ Import Mechanism:
 '''
 
 import pymongo
-SERVER_ADDR = "142.93.6.251" # Tina's droplet
+SERVER_ADDR = "104.248.49.171" # Jeffrey's Droplet
 connection = pymongo.MongoClient(SERVER_ADDR)
 db = connection.friends
 collection = db.senators
