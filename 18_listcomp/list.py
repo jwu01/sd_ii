@@ -5,7 +5,8 @@ def pyth(n):
 print(pyth(15))
 
 def quickSort(l):
-    piv = l[0]
-    lower = [x for x in l if x < piv]
-    upper = [y for y in l if x >= piv]
-    return quickSort(lower) + p + quickSort(upper)
+    if (len(l)) == 1:
+         return l
+    return quickSort([x for x in l[1:] if x < l[0]]) + [l[0]] + quickSort([x for x in l[1:] if x >= l[0]])
+
+print(quickSort([1,3,6,3,2,1]))
