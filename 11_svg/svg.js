@@ -2,6 +2,9 @@ var box = document.getElementById("box");
 var clear = document.getElementById("clear");
 var newC = true;
 var move = document.getElementById("move");
+var moving = false; 
+var requestID;
+
 
 box.addEventListener('click', function(e){
     e.preventDefault
@@ -35,9 +38,47 @@ box.addEventListener('click', function(e){
 })
 
 move.addEventListener('click', function(){
-}
+    if(!moving)
+        setup();
+})
 clear.addEventListener('click', function(){
 	while (box.firstChild) {
 		box.removeChild(box.firstChild);
     }
 })
+
+
+
+var setup = () => {
+
+    var xCoordinate = Math.floor( Math.random() * (canvas.width-rectWidth) );
+    var yCoordinate = Math.floor( Math.random() * (canvas.height-rectHeight) );
+    
+    var xVel = Math.random() * 10 - 5 ;
+    var yVel = Math.random()* 10 - 5 ;
+
+    var logo = new Image();
+    logo.src = "logo_dvd.jpg";
+    
+    var moveCircles = () => {
+
+        clear();
+
+        console.log("--------------------");
+        console.log("drawing frame w/ requestID " + requestID);
+
+        xCoordinate -= xVel;
+        yCoordinate -= yVel;
+
+        if (xCoordinate <= 0 || xCoordinate+rectWidth >= canvas.width)
+            xVel *= -1;
+        if (yCoordinate <= 0 || yCoordinate+rectHeight >= canvas.height)
+            yVel *= -1;
+        
+        ctx.drawImage(logo, xCoordinate, yCoordinate, rectWidth, rectHeight); ;
+        
+        window.requestAnimationFrame(moveCircles)
+        
+    }// end of inner fxn
+
+    moveCircles();}

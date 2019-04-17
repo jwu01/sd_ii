@@ -34,4 +34,6 @@ clear.addEventListener('click', function(){
 	while (box.firstChild) {
 		box.removeChild(box.firstChild);
 	}
+	prevX = null;
+    prevY = null;
 })

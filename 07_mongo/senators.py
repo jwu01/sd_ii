@@ -38,7 +38,7 @@ def search_senator(sen):
     senators = db.senators.find({'$and': [{"person.firstname": sen[0]},{'person.lastname': sen[1]}]})
     for senator in senators:
         print(senator)
-# search_senator("Jacky Rosen")
+search_senator("Jacky Rosen")
 
 def search_state(state):
     senators = db.senators.find({"state": state})
