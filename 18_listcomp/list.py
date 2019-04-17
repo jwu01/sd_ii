@@ -5,7 +5,7 @@ def pyth(n):
 print(pyth(15))
 
 def quickSort(l):
-    if (len(l)) == 1:
+    if (len(l)) < 1 :
          return l
     return quickSort([x for x in l[1:] if x < l[0]]) + [l[0]] + quickSort([x for x in l[1:] if x >= l[0]])
 
