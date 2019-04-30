@@ -1,3 +1,0 @@
-
-def freq(word):
-    

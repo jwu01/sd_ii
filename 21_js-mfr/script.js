@@ -1,2 +1,3 @@
-list = JSON.parse(data);
-console.log(list[0])
+d3.csv("data.csv", function(data){
+    console.log(data);
+});
